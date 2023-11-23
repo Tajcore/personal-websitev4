@@ -2,6 +2,7 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
+import { ActiveSectionProvider } from "@/lib/contexts/ActiveSectionContext"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description: siteConfig.summary,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -36,17 +37,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "lg:px-18 mx-auto min-h-screen max-w-screen-xl bg-background py-12 font-sans antialiased md:px-12 md:py-16 lg:py-0",
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-            </div>
-            <TailwindIndicator />
-          </ThemeProvider>
+          <ActiveSectionProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-4">
+                <SiteHeader />
+                <div className="w-full grow">{children}</div>
+              </div>
+              <TailwindIndicator />
+            </ThemeProvider>
+          </ActiveSectionProvider>
         </body>
       </html>
     </>

@@ -5,6 +5,9 @@ import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import Image from "next/image"
+import Logo from '../public/logo.png'
+import NavLink from "./nav-link"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -12,26 +15,25 @@ interface MainNavProps {
 
 export function MainNav({ items }: MainNavProps) {
   return (
-    <div className="flex gap-6 md:gap-10">
+    <div className="flex flex-col gap-3 md:gap-6">
       <Link href="/" className="flex items-center space-x-2">
-        <Icons.logo className="h-6 w-6" />
-        <span className="inline-block font-bold">{siteConfig.name}</span>
+        <div className="flex h-8 w-8 items-center rounded-md bg-blue-700 p-2 lg:h-9 lg:w-9">
+        <Image src={Logo} alt="logo"  />
+        </div>
+        <span className="inline-block text-2xl font-bold lg:text-3xl">{siteConfig.name}</span>
       </Link>
+      <p className="text-lg font-bold lg:text-xl">{siteConfig.role}</p>
+      <p className="text-muted-foreground">{siteConfig.summary}</p>
       {items?.length ? (
-        <nav className="flex gap-6">
+        <nav className="nav hidden flex-col gap-3 lg:flex">
           {items?.map(
             (item, index) =>
               item.href && (
-                <Link
-                  key={index}
+                <NavLink
                   href={item.href}
-                  className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
+                  title={item.title}
+                  key={`nav-item-${index}`}
+                />
               )
           )}
         </nav>
