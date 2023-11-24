@@ -1,12 +1,13 @@
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
-import Image from "next/image"
-import Logo from '../public/logo.png'
+
+import Logo from "../public/logo.png"
 import NavLink from "./nav-link"
 
 interface MainNavProps {
@@ -18,9 +19,11 @@ export function MainNav({ items }: MainNavProps) {
     <div className="flex flex-col gap-3 md:gap-6">
       <Link href="/" className="flex items-center space-x-2">
         <div className="flex h-8 w-8 items-center rounded-md bg-blue-700 p-2 lg:h-9 lg:w-9">
-        <Image src={Logo} alt="logo"  />
+          <Image src={Logo} alt="logo" />
         </div>
-        <span className="inline-block text-2xl font-bold lg:text-3xl">{siteConfig.name}</span>
+        <span className="inline-block text-2xl font-bold lg:text-3xl">
+          {siteConfig.name}
+        </span>
       </Link>
       <p className="text-lg font-bold lg:text-xl">{siteConfig.role}</p>
       <p className="text-muted-foreground">{siteConfig.summary}</p>
@@ -43,7 +46,7 @@ export function MainNav({ items }: MainNavProps) {
           href={siteConfig.socials.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
+          className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
         >
           <Icons.gitHub className="h-4 w-4" />
         </a>
@@ -51,7 +54,7 @@ export function MainNav({ items }: MainNavProps) {
           href={siteConfig.socials.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
+          className="z-10  flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
         >
           <Icons.linkedin className="h-4 w-4" />
         </a>
@@ -59,11 +62,11 @@ export function MainNav({ items }: MainNavProps) {
           href={siteConfig.socials.twitter}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
+          className="z-10  flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
         >
           <Icons.twitter className="h-4 w-4" />
         </a>
-        </div>
+      </div>
     </div>
   )
 }

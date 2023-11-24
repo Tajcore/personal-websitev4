@@ -42,7 +42,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
         isDimmed ? "lg:opacity-50" : "lg:hover:bg-gray-900"
       }`}
     >
-      <div className="flex flex-row items-start justify-between gap-3">
+      <div className="flex flex-col items-start justify-between gap-3 lg:flex-row">
       <div className="shrink-0">
           <Image
             loader={imageLoader}
