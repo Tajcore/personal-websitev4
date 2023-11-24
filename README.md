@@ -1,7 +1,3 @@
-Sure! Based on the provided URL and details, here's a revised README for your personal website project:
-
----
-
 # Tahjyei Thompson's Personal Website
 
 Welcome to the GitHub repository for Tahjyei Thompson's personal website, a cutting-edge web application showcasing my professional portfolio and personal projects. This site is meticulously crafted using Next.js 13, Tailwind CSS, Radix UI, and Lucide Icons, delivering an engaging and responsive user experience.
