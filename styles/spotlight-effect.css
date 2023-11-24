@@ -1,0 +1,14 @@
+.spotlight-effect {
+  @apply fixed inset-0 pointer-events-none;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+      rgba(57, 57, 61, 0.15) 0%,
+   rgba(44, 40, 40, 0.05) 20%,
+    rgba(255, 255, 255, 0) 30%
+
+  );
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  transition: background 0.1s ease-out;
+}

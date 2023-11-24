@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import SpotlightEffect from "@/components/spotlight-effect"
 
 export const metadata: Metadata = {
   title: {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ActiveSectionProvider>
+          <SpotlightEffect>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-4">
                 <SiteHeader />
@@ -49,6 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
               <TailwindIndicator />
             </ThemeProvider>
+          </SpotlightEffect>
           </ActiveSectionProvider>
         </body>
       </html>
