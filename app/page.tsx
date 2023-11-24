@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import ExperienceList from "@/components/experience-list"
 import { Icons } from "@/components/icons"
+import ProjectList from "@/components/project-list"
 
 export default function IndexPage() {
   return (
@@ -63,7 +64,9 @@ export default function IndexPage() {
         className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >        <div className=" sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 text-lg font-semibold uppercase tracking-wider backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:p-0 lg:opacity-0">
       Projects
-    </div></section>
+    </div>
+    <ProjectList projects={siteConfig.projects} />
+    </section>
     </div>
   )
 }

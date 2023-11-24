@@ -25,7 +25,7 @@ export function MainNav({ items }: MainNavProps) {
       <p className="text-lg font-bold lg:text-xl">{siteConfig.role}</p>
       <p className="text-muted-foreground">{siteConfig.summary}</p>
       {items?.length ? (
-        <nav className="nav hidden flex-col gap-3 lg:flex">
+        <nav className="nav hidden h-full grow flex-col gap-3 lg:flex">
           {items?.map(
             (item, index) =>
               item.href && (
@@ -38,6 +38,32 @@ export function MainNav({ items }: MainNavProps) {
           )}
         </nav>
       ) : null}
+      <div className="flex w-full flex-row gap-3">
+        <a
+          href={siteConfig.socials.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
+        >
+          <Icons.gitHub className="h-4 w-4" />
+        </a>
+        <a
+          href={siteConfig.socials.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
+        >
+          <Icons.linkedin className="h-4 w-4" />
+        </a>
+        <a
+          href={siteConfig.socials.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-2 transition-all duration-75 ease-linear hover:bg-blue-700 lg:h-9 lg:w-9"
+        >
+          <Icons.twitter className="h-4 w-4" />
+        </a>
+        </div>
     </div>
   )
 }

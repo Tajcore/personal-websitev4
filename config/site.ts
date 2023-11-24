@@ -60,5 +60,33 @@ export const siteConfig = {
       technologies: ['React', 'Nest.js', 'Node'],
       link: 'https://www.norustech.com/',
     },
-  ]
+  ],
+  projects: [
+    {
+      title: "AskLepios",
+      description: "A medical chatbot that provides users with a preliminary diagnosis based on their symptoms. Features include a user-friendly interface, real-time chat, and a comprehensive database of diseases and symptoms.",
+      thumbnail: "asklepios/imgs/landing_page.png",
+      technologies: ["Vue.js", "Node.js", "Quasar.js", "WebSockets", "SciKit-Learn", "PostgreSQL", "Redis", "Flask"],
+      link: "https://youtu.be/9eXCB3Fs-qU?si=QQFkaAQJ5eJ_5zhn",
+    },
+    {
+      title: "gunD",
+      description: "A platform that showcases a Computer Vision model's ability to detect and classify guns in images and videos.",
+      thumbnail: "gunD/imgs/landing_page.png",
+      technologies: ["React.js", "TailwindCSS", "Flask", "PostgreSQL", "Redis", "TensorFlow"],
+      link: "https://github.com/Tajcore/gunD-front",
+    },
+    {
+      title: "Pattoo",
+      description: "Pattoo is an IoT data collection system that stores timeseries data in a database and exposes it through a GraphQL API, enabling the creation of custom agents for various data sources like Linux, SNMP, and BACnet/IP. It primarily consists of four components: the central API and database (pattoo), the data collection agents (pattoo-agents), a web UI (pattoo-web), and a shared software library (pattoo-shared). Designed for DevOps and building facilities management teams, pattoo supports Linux systems and encourages community contribution through its alpha stage, with documentation and resources available for both users and developers.",
+      thumbnail: "pattoo-mobile/imgs/login_screen_light_mode.png",
+      technologies: ["Flutter", "Dart", "GraphQL", "Django", "PostgreSQL", "Redis", "InfluxDB", "Linux", "SNMP", "BACnet/IP"],
+      link: "https://palisadoesfoundation.github.io/pattoo.github.io/",
+    },
+  ],
+  socials: {
+    twitter: "https://twitter.com/tahjyei",
+    github: "https://github.com/tajcore",
+    linkedin: "https://www.linkedin.com/in/tajcore/",
+  }
 }
