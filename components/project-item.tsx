@@ -43,13 +43,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
       }`}
     >
       <div className="flex flex-col items-start justify-between gap-3 lg:flex-row">
-      <div className="shrink-0">
+      <div className="relative h-80 w-full shrink-0 lg:h-36 lg:w-36">
           <Image
             loader={imageLoader}
             src={thumbnail}
             alt={`${title} Thumbnail`}
-            width={128} // or your desired size
-            height={128}
+            layout="fill"
             className="rounded-lg"
           />
         </div>
