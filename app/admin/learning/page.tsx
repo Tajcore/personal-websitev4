@@ -87,7 +87,7 @@ export default async function LearningPage() {
 
                     {item.topics && item.topics.length > 0 && (
                       <div className="flex flex-wrap gap-1 mt-3">
-                        {item.topics.slice(0, 5).map((topic, i) => (
+                        {item.topics.slice(0, 5).map((topic: string, i: number) => (
                           <Badge key={i} variant="outline" className="text-xs">
                             {topic}
                           </Badge>
