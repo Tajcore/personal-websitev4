@@ -7,6 +7,33 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { MarkdownRenderer } from "@/components/markdown-renderer"
+import type { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const supabase = await createClient()
+  const { data: project } = await supabase.from("projects").select("title, short_description").eq("slug", slug).single()
+  if (!project) {
+    return {
+      title: "Project | Tahjyei Thompson",
+    }
+  }
+  const title = `${project.title} | Project Case Study`
+  return {
+    title,
+    description: project.short_description || "Project case study and detailed write-up.",
+    openGraph: {
+      title,
+      description: project.short_description || undefined,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.short_description || undefined,
+    },
+  }
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params

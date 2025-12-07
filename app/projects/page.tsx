@@ -1,3 +1,10 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Projects | Tahjyei Thompson",
+  description:
+    "Browse all projects showcasing problem-solving, engineering craft, and measurable impact across roles and domains.",
+}
 import { createClient } from "@/lib/server"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"

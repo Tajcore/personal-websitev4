@@ -1,3 +1,10 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Resume | Tahjyei Thompson",
+  description:
+    "Download or print a tailored resume generated from my skills, experience, and role presets.",
+}
 import { createClient } from "@/lib/server"
 import { PublicResume } from "@/components/public-resume"
 
